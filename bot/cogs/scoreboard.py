@@ -89,6 +89,21 @@ class Scoreboard(commands.Cog):
 
         events = data.get("events", [])
 
+        def get_sort_key(event: dict) -> int:
+            """Sort: in-progress first, then scheduled, then finished."""
+            competitions = event.get("competitions", [])
+            if not competitions:
+                return 2
+            state = competitions[0].get("status", {}).get("type", {}).get("state", "")
+            if state == "in":
+                return 0
+            elif state == "pre":
+                return 1
+            else:
+                return 2
+
+        events = sorted(events, key=get_sort_key)
+
         if not events:
             return [f"**{sport_name} Scoreboard - {today}**\n\nNo games scheduled today."]
 

@@ -44,7 +44,7 @@ class Claude(commands.Cog):
                     messages=[
                         {
                             "role": "user",
-                            "content": f"{prompt}\n\nRespond casually like a chat message. No titles, headers, or formal structure. Just answer directly and conversationally.",
+                            "content": f"{prompt}\n\nBe conversational but professional. No titles or headers.",
                         }
                     ],
                 )
