@@ -32,6 +32,7 @@ class Bot(commands.Bot):
         self.initial_extensions: list[str] = [
             "bot.cogs.general",
             "bot.cogs.scoreboard",
+            "bot.cogs.claude",
         ]
 
     async def setup_hook(self) -> None:

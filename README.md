@@ -22,6 +22,12 @@ A Discord bot built with [discord.py](https://discordpy.readthedocs.io/).
 
 **Supported leagues:** NFL, MLB, NBA, NHL, NCAAF, NCAAB, MLS, EPL
 
+### Claude
+
+| Command | Description | Access |
+|---------|-------------|--------|
+| `!claude <prompt>` | Ask Claude AI a question | Server owner only |
+
 ## Setup
 
 ### 1. Create a Discord Application
@@ -37,9 +43,10 @@ A Discord bot built with [discord.py](https://discordpy.readthedocs.io/).
 cp .env.example .env
 ```
 
-Edit `.env` and add your bot token:
+Edit `.env` and add your tokens:
 ```
 DISCORD_TOKEN=your_bot_token_here
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
 ```
 
 ### 3. Install Dependencies

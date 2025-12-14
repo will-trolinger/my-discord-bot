@@ -11,7 +11,8 @@ discord-bot/
 │   ├── cogs/            # Command modules
 │   │   ├── __init__.py
 │   │   ├── general.py   # General commands
-│   │   └── scoreboard.py # Sports scoreboard
+│   │   ├── scoreboard.py # Sports scoreboard
+│   │   └── claude.py    # Claude AI integration
 │   └── utils/           # Helper functions
 │       ├── __init__.py
 │       └── helpers.py
