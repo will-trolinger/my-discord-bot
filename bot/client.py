@@ -31,7 +31,7 @@ class Bot(commands.Bot):
 
         self.initial_extensions: list[str] = [
             "bot.cogs.general",
-            # Add more cogs here as you create them
+            "bot.cogs.scoreboard",
         ]
 
     async def setup_hook(self) -> None:
@@ -71,6 +71,10 @@ class Bot(commands.Bot):
 
         if isinstance(error, commands.MissingPermissions):
             await ctx.send("You don't have permission to use this command.")
+            return
+
+        if isinstance(error, commands.MissingRole):
+            await ctx.send(f"You need the **{error.missing_role}** role to use this command.")
             return
 
         if isinstance(error, commands.BotMissingPermissions):
