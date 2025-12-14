@@ -63,7 +63,3 @@ Generate an invite URL from the Developer Portal:
 ```bash
 python -m bot.main
 ```
-
-## License
-
-MIT
