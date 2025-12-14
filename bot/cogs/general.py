@@ -43,34 +43,6 @@ class General(commands.Cog):
         """Say hello (owner only)."""
         await ctx.send(f"Hello, {ctx.author.name}!")
 
-    @commands.command(name="helicopter")
-    @commands.guild_only()
-    @commands.is_owner()
-    async def helicopter(self, ctx: commands.Context) -> None:
-        """Play the chopper playlist and shuffle it."""
-        import asyncio
-
-        try:
-            webhooks = await ctx.channel.webhooks()
-            webhook = next((w for w in webhooks if w.name == "HelicopterBot"), None)
-
-            if not webhook:
-                webhook = await ctx.channel.create_webhook(name="HelicopterBot")
-
-            await webhook.send(
-                "m!play https://music.apple.com/us/playlist/chopper/pl.u-9N9LXjLIxqEek06",
-                username=ctx.author.display_name,
-                avatar_url=ctx.author.display_avatar.url
-            )
-            await asyncio.sleep(1)
-            await webhook.send(
-                "m!shuffle",
-                username=ctx.author.display_name,
-                avatar_url=ctx.author.display_avatar.url
-            )
-        except discord.Forbidden:
-            await ctx.send("I need the **Manage Webhooks** permission in this channel.")
-
     @commands.command(name="serverinfo")
     @commands.guild_only()
     async def server_info(self, ctx: commands.Context) -> None:

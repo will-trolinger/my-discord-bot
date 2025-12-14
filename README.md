@@ -12,7 +12,6 @@ A Discord bot built with [discord.py](https://discordpy.readthedocs.io/).
 | `!info` | Display bot information | Everyone |
 | `!serverinfo` | Display server information | Everyone |
 | `!hello` | Say hello | Owner only |
-| `!helicopter` | Play the chopper playlist | Owner only |
 | `!help` | Show all available commands | Everyone |
 
 ### Scoreboard
